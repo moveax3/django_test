@@ -1,0 +1,9 @@
+{% extends "tasks/root.html" %}
+{% block content %}
+<a href="/tasks/new">Create task</a>
+<ul>
+{% for task in tasks %}
+<li>{{task.name}} - {{task.get_status_display}}{% if task.complete_time %} - {{task.complete_time}}{% endif %}</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "tasks/root.html" %}
+{% block content %}
+<a href="/tasks/">Tasks list</a>
+<form action="/tasks/new" method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Создать задачу">
+</form>
+{% endblock %}
