@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': 'db',
+        'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': '',
     }
 }
@@ -125,8 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-CELERY_BROKER_URL = 'redis://redis:6379'
-CELERY_RESULT_BACKEND = 'redis://redis:6379'
+CELERY_BROKER_URL = os.getenv('REDIS_ADDR')
+CELERY_RESULT_BACKEND = os.getenv('REDIS_ADDR')
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
