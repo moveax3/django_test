@@ -25,7 +25,7 @@ SECRET_KEY = 'x!l--t-qh-^^c8=nis#b(xuu^)%7-q=_8utdgk_6*c3kal2&3i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.getenv("DEBUG")))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.getenv("HOST"),]
 
 
 # Application definition
